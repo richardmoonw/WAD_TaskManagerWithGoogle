@@ -1,0 +1,47 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+loopy-front/node_modules
+loopy-front/.pnp
+loopy-front/.pnp.js
+
+# testing
+loopy-front/coverage
+
+# production
+loopy-front/build
+
+# misc
+loopy-front/.DS_Store
+loopy-front/.env.local
+loopy-front/.env.development.local
+loopy-front/.env.test.local
+loopy-front/.env.production.local
+
+loopy-front/npm-debug.log*
+loopy-front/yarn-debug.log*
+loopy-front/yarn-error.log*
