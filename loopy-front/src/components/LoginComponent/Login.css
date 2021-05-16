@@ -1,0 +1,131 @@
+/* DESKTOP CLASSES */
+.desktopContainerLogin {
+  margin: 2rem;
+  font-family: 'Helvetica';
+  align-items: center;
+}
+
+.leftColumn {
+  height: 100%;
+}
+
+.rightColumn {
+  text-align: center;
+}
+
+.desktopLogo {
+  width: 75%;
+}
+
+.desktopContentContainer {
+  align-items: center;
+  position: relative;
+  transform: translatey(15%);
+  top: 50%;  
+}
+
+.desktopImage {
+  width: 80%;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+}
+
+.desktopTitle {
+  font-size: 2.3rem;
+  color: #3d5a80;
+}
+
+.desktopSubtitle {
+  font-size: 1.5rem;
+  color: #3d5a80;;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.desktopText {
+  color: #717786;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.desktopLoginButton {
+  width: 80%;
+  padding: 0.8rem;
+  margin-top: 3%;
+  background-color: #ee6c4d;
+  color: white;
+  border-radius: 3rem;
+  border: none;
+  box-shadow: 0rem 0.25rem 0.5rem rgba(238, 108, 77, 0.5);
+}
+
+/* MOBILE CLASSES */
+.mobileContainer {
+  margin: 2rem;
+  text-align: center;
+}
+
+.mobileLogo {
+  width: 100%;
+}
+
+.mobileTitle {
+  font-size: 1.8rem;
+  color: #3d5a80;
+  margin-top: 10%;
+}
+
+.mobileImage {
+  width: 100%;
+  padding: 0;
+  margin: -1rem 0 -1rem 0;
+}
+
+.mobileSubtitle {
+  font-size: 1.5rem;
+  color: #3d5a80;
+  font-weight: bold;
+}
+
+.mobileText {
+  color: #717786;
+  line-height: 1.1rem;
+}
+
+.mobileLoginButton {
+  width: 90%;
+  padding: 0.8rem;
+  margin-top: 3%;
+  background-color: #ee6c4d;
+  color: white;
+  border-radius: 3rem;
+  border: none;
+  box-shadow: 0rem 0.25rem 0.5rem rgba(238, 108, 77, 0.5);
+}
+
+.mobileLoginButtonIcon {
+  font-size: 0.85rem;
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.mobileLoginButtonText {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.mobileContact {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.mobileUser {
+  font-weight: bolder;
+  color: #08a0e9;
+}

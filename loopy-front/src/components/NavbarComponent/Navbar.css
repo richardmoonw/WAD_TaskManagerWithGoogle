@@ -1,0 +1,49 @@
+/* DESKTOP CLASSES */
+.navbarContainer {
+  padding-bottom: 1.5rem;
+}
+
+.logo {
+  width: 100%;
+}
+
+.topPanel {
+  margin-top: 1rem;
+}
+
+.formattedLink {
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.buttonContainer {
+  text-align: right;
+}
+
+.navbarButton {
+  width: 30%;
+}
+
+.buttonIcon {
+  color: white;
+}
+
+/* MOBILE CLASSES */
+.mobileNavbarContainer {
+  padding: 1rem 1rem 0 1rem;
+  align-items: center;
+}
+
+.routesContainer {
+  text-align: right;
+}
+
+.mobileFormattedLink {
+  text-decoration: none;
+}
+
+.mobileRouteIcon {
+  margin: 0.2rem 0.3rem 0 0;
+  font-size: 1rem;
+  color: black;
+}
