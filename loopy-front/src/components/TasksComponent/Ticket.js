@@ -8,7 +8,7 @@ const Ticket = (props) => {
   const [open, setOpen] = useState(false)
   
   const HandleDeletion = () => {
-    axios.delete(`http://localhost:3000/projects/${props.ticket.project_id}/tasks/${props.ticket.id}`)
+    axios.delete(`http://localhost:3001/projects/${props.ticket.project_id}/tasks/${props.ticket.id}`)
     .then(response => {
       props.setFlag(!props.flag);
     })

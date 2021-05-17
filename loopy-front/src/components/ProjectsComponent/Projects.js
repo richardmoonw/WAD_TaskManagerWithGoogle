@@ -23,7 +23,7 @@ const Projects = () => {
     });
 
     useEffect(() => {
-        axios.get("http://localhost:3000/projects")
+        axios.get("http://localhost:3001/projects")
         .then(response => setProjects(response.data))
         .catch(resp => console.log(resp))
     }, [flag]);

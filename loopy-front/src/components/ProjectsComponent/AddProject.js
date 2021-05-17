@@ -19,7 +19,7 @@ const AddProject = ({ open, setOpen, flag, setFlag }) => {
   }
 
   const handleAddition = () => {
-    axios.post('http://localhost:3000/projects', {
+    axios.post('http://localhost:3001/projects', {
       project: {
         name: title,
         description: description,

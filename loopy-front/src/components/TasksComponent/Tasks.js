@@ -32,13 +32,13 @@ const Tasks = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/projects/${id}`)
+    axios.get(`http://localhost:3001/projects/${id}`)
     .then(response => setProject(response.data))
     .catch(response => console.log(response))
   }, []);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/projects/${id}/tasks`)
+    axios.get(`http://localhost:3001/projects/${id}/tasks`)
     .then(response => setTickets(response.data))
     .catch(response => console.log(response))
   }, [flag]);

@@ -28,7 +28,7 @@ const ProjectCard = (props) => {
   });
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:3000/projects/${id}`)
+    axios.delete(`http://localhost:3001/projects/${id}`)
     .then(() => setFlag(!flag))
   }
 

@@ -19,7 +19,7 @@ const EditProject = ({ open, setOpen, flag, setFlag, project }) => {
   }
 
   const handleUpdate = () => {
-    axios.put(`http://localhost:3000/projects/${project.id}`, {
+    axios.put(`http://localhost:3001/projects/${project.id}`, {
       project: {
         name: title,
         description: description,

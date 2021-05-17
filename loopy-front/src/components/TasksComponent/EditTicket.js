@@ -25,7 +25,7 @@ const EditTicket = ({ open, setOpen, ticket, flag, setFlag }) => {
   }
 
   const handleUpdate = () => {
-    axios.put(`http://localhost:3000/projects/${ticket.project_id}/tasks/${ticket.id}`, {
+    axios.put(`http://localhost:3001/projects/${ticket.project_id}/tasks/${ticket.id}`, {
       task: {
         name: title,
         description: description,
