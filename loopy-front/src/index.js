@@ -6,18 +6,22 @@ import Tasks from './components/TasksComponent/Tasks';
 import Projects from './components/ProjectsComponent/Projects';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Login/>
-        </Route>
-        <Route exact component={ (props) => <Projects userId={props.location.state.userId} /> } path="/projects">
+        <Route exact component={ (props) => {
+          if (props.location.state !== undefined) return <Projects userId={props.location.state.userId} />
+          else return <Redirect to="/" />
+        } } path="/projects">
         </Route>
         <Route path="/projects/:id/tasks">
           <Tasks/>
+        </Route>
+        <Route path="/">
+          <Login/>
         </Route>
       </Switch>
     </BrowserRouter>
