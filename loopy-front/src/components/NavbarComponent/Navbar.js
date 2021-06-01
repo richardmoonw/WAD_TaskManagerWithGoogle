@@ -8,7 +8,7 @@ import { BiMenu } from "react-icons/bi";
 import { FiLogOut } from "react-icons/fi";
 import Logo from '../../assets/logo.webp';
 
-const Navbar = ({module}) => {
+const Navbar = ({ userId, module }) => {
 
   const handleLogout = async googleData => {
     const res = await fetch("/api/v1/auth/google/logout", {
@@ -50,14 +50,14 @@ const Navbar = ({module}) => {
           <Grid item md={11}>
             <Grid className="topPanel" container>
               <Grid item md={1}>
-                <Link to="/">
-                  <img className="logo" src={Logo} alt="loopy"></img>
-                </Link>
+                <img className="logo" src={Logo} alt="loopy"></img>
               </Grid>
               <Grid item md={5}></Grid>
               <Grid className="buttonContainer" item md={5}>
                 { module === "tasks" &&
-                    <Link className="formattedLink" to="/projects">
+                    <Link 
+                      className="formattedLink" 
+                      to={{ pathname: "/projects", state: { userId: userId } }}>
                       <Button
                         className="navbarButton" 
                         variant="contained"
@@ -84,9 +84,7 @@ const Navbar = ({module}) => {
       { isTabletOrSmartphone &&
         <Grid className="mobileNavbarContainer" container>
           <Grid item xs={3}>
-            <Link to="/">
-              <img className="logo" src={Logo} alt="loopy"></img>
-            </Link>
+            <img className="logo" src={Logo} alt="loopy"></img>
           </Grid>
           <Grid item xs={8}></Grid>
           <Grid className="routesContainer" item xs={1}>
@@ -106,12 +104,6 @@ const Navbar = ({module}) => {
                 <Link className="mobileFormattedLink" to="/projects">
                   <AiOutlineAppstore className="mobileRouteIcon"/>
                   Projects
-                </Link>
-                }
-                { module === "projects" && 
-                <Link className="mobileFormattedLink" to="/tasks">
-                  <AiOutlineAppstore className="mobileRouteIcon"/>
-                  Tasks
                 </Link>
                 }
               </MenuItem>

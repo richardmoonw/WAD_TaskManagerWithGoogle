@@ -110,7 +110,7 @@ const Login = () => {
         </>
       }
       { logged &&
-        <Redirect to={{ pathname: "/projects", state: { logged: "Hola", userId: userId } }} />
+        <Redirect to={{ pathname: "/projects", state: { userId: userId } }} />
       }
     </>
   );
