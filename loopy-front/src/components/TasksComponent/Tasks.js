@@ -39,10 +39,7 @@ const Tasks = () => {
 
   useEffect(() => {
     axios.get(`http://localhost:3001/projects/${id}/tickets`)
-    .then(response => {
-      console.log(response.data)
-      setTickets(response.data)
-    })
+    .then(response => setTickets(response.data))
     .catch(response => console.log(response))
   }, [flag]);
 
@@ -50,7 +47,7 @@ const Tasks = () => {
     <>
       { isDesktopOrLaptop &&
         <div className="desktopContainer">
-          <Navbar module="tasks" />
+          <Navbar module="tasks" userId={project.userId} />
           <Grid className="columnsContainer" container>
             <Grid item md={1}></Grid>
             <Grid item md={10}>
@@ -116,7 +113,7 @@ const Tasks = () => {
       {/* Mobile design */}
       { isTabletOrSmartphone && 
         <>
-          <Navbar module="tasks" />
+          <Navbar module="tasks" id={id} />
           <div className="mobileBackgroundComponent">
             <div className="mobileTasksComponent">
               <Grid container>

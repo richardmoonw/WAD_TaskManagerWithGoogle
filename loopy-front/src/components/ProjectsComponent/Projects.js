@@ -23,7 +23,6 @@ const Projects = ({userId}) => {
   });
   
   useEffect(() => {
-    console.log(userId)
     axios.get("http://localhost:3001/projects", 
     {
       params: {
@@ -38,82 +37,81 @@ const Projects = ({userId}) => {
     <>
     { isDesktopOrLaptop && 
       <div className="desktopContainer">
-      <Navbar module="projects" />
-      <div className="columnsContainer">
-      <Grid container>
-      <Grid item md={1}></Grid>
-      <Grid item md={10}>
-      <Grid container>
-      <Grid item md={11}>
-      <p className="title">Projects</p>
-      </Grid>
-      <Grid className="centeredContainer" item md={1}>
-      <IconButton className="addButton" onClick={() => setOpen(true)}>
-      <IoAddOutline />
-      </IconButton>
-      </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-      {
-        projects.map(project => {
-          console.log(project)
-          return (
-            <ProjectCard 
-            key={project.id} 
-            id={project._id} 
-            title={project.name} 
-            description={project.description} 
-            date={project.start_at.slice(0,10)} 
-            image={Logo} 
-            flag={flag} 
-            setFlag={setFlag}
-            />
-            );
-          })
-        }
-        </Grid>
-        </Grid>
-        </Grid>
-        </div>
-        </div>
-      }
-      {/* Mobile design */}
-      { isTabletOrSmartphone && 
-        <>
         <Navbar module="projects" />
-        <div className="mobileBackgroundComponent">
-        <div className="mobileProjectsComponent">
-        <Grid container>
-        <Grid item xs={11}>
-        <p className="title">Projects</p>
-        </Grid>
-        <Grid className="centeredContainer" item xs={1}>
-        <IconButton className="addButton" onClick={() => setOpen(true)}>
-        <IoAddOutline />
-        </IconButton>
-        </Grid>
-        <Grid spacing={2} container>
-        {
-          projects.map(project => {
-            return (
-              <ProjectCard 
-              key={project.id} 
-              id={project.id} 
-              title={project.name} 
-              description={project.description} 
-              date={project.start_at.slice(0,10)} 
-              image={Logo} 
-              flag={flag} 
-              setFlag={setFlag}
-              />
-              )
-            })
-          }
+        <div className="columnsContainer">
+          <Grid container>
+            <Grid item md={1}></Grid>
+            <Grid item md={10}>
+              <Grid container>
+                <Grid item md={11}>
+                  <p className="title">Projects</p>
+                </Grid>
+                <Grid className="centeredContainer" item md={1}>
+                  <IconButton className="addButton" onClick={() => setOpen(true)}>
+                    <IoAddOutline />
+                  </IconButton>
+                </Grid>
+              </Grid>
+              <Grid container spacing={2}>
+              {
+                projects.map(project => {
+                  return (
+                    <ProjectCard 
+                      key={project.id} 
+                      id={project._id} 
+                      title={project.name} 
+                      description={project.description} 
+                      date={project.start_at.slice(0,10)} 
+                      image={Logo} 
+                      flag={flag} 
+                      setFlag={setFlag}
+                    />
+                    );
+                  })
+                }
+              </Grid>
+            </Grid>
           </Grid>
-          </Grid>
+        </div>
+      </div>
+    }
+    {/* Mobile design */}
+    { isTabletOrSmartphone && 
+      <>
+        <Navbar module="projects" />
+          <div className="mobileBackgroundComponent">
+            <div className="mobileProjectsComponent">
+              <Grid container>
+                <Grid item xs={11}>
+                  <p className="title">Projects</p>
+                </Grid>
+                <Grid className="centeredContainer" item xs={1}>
+                  <IconButton className="addButton" onClick={() => setOpen(true)}>
+                    <IoAddOutline />
+                  </IconButton>
+                </Grid>
+                <Grid spacing={2} container>
+                {
+                  projects.map(project => {
+                    return (
+                      <ProjectCard 
+                        key={project.id} 
+                        id={project.id} 
+                        title={project.name} 
+                        description={project.description} 
+                        date={project.start_at.slice(0,10)} 
+                        image={Logo} 
+                        flag={flag} 
+                        setFlag={setFlag}
+                      />
+                      )
+                    })
+                  }
+                </Grid>
+              </Grid>
+            </div>
           </div>
-          </div>
-          </>
+      </>
     }
         
     <AddProject
