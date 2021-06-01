@@ -25,8 +25,8 @@ const CreateTicket = ({ open, setOpen, flag, setFlag, project_id }) => {
   }
 
   const handleCreate = () => {
-    axios.post(`http://localhost:3001/projects/${project_id}/tasks`, {
-      task: {
+    axios.post(`http://localhost:3001/projects/${project_id}/tickets`, {
+      ticket: {
         name: title,
         description: description,
         status: status,

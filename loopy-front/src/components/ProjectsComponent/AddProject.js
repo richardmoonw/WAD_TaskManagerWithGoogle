@@ -8,7 +8,7 @@ import { GrClose } from "react-icons/gr";
 import { IoCreateOutline } from "react-icons/io5";
 import axios from 'axios';
 
-const AddProject = ({ open, setOpen, flag, setFlag }) => {
+const AddProject = ({ open, setOpen, flag, setFlag, userId }) => {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -23,7 +23,8 @@ const AddProject = ({ open, setOpen, flag, setFlag }) => {
       project: {
         name: title,
         description: description,
-        start_at: date
+        start_at: date,
+        userId: userId
       }
     })
     .then(() => {

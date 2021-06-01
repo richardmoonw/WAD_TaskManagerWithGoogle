@@ -14,8 +14,7 @@ ReactDOM.render(
         <Route exact path="/">
           <Login/>
         </Route>
-        <Route exact path="/projects">
-          <Projects/>
+        <Route exact component={ (props) => <Projects userId={props.location.state.userId} /> } path="/projects">
         </Route>
         <Route path="/projects/:id/tasks">
           <Tasks/>

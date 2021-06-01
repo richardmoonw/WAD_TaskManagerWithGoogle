@@ -8,7 +8,7 @@ const Ticket = (props) => {
   const [open, setOpen] = useState(false)
   
   const HandleDeletion = () => {
-    axios.delete(`http://localhost:3001/projects/${props.ticket.project_id}/tasks/${props.ticket.id}`)
+    axios.delete(`http://localhost:3001/projects/${props.ticket.project_id}/tickets/${props.ticket._id}`)
     .then(response => {
       props.setFlag(!props.flag);
     })
@@ -23,7 +23,7 @@ const Ticket = (props) => {
           {/* Header */}
           <Grid container alignItems='center'>
             <Grid item xs={5} md={5}>
-              <span className="ticketField">ID-{props.ticket.id}</span>
+              <span className="ticketField">ID - {props.ticket._id.slice(-4)}</span>
             </Grid>
             <Grid container item xs={7} md={7} alignItems="center" justify="flex-end">
               <Grid item>

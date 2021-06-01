@@ -10,6 +10,16 @@ import Logo from '../../assets/logo.webp';
 
 const Navbar = ({module}) => {
 
+  const handleLogout = async googleData => {
+    const res = await fetch("/api/v1/auth/google/logout", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    handleClose();
+  }
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -61,6 +71,7 @@ const Navbar = ({module}) => {
                     className="navbarButton" 
                     variant="contained"
                     color="secondary"
+                    onClick={() => handleLogout()}
                     startIcon={<FiLogOut className="buttonIcon" />}
                     >Sign Out</Button>
                 </Link>
@@ -104,7 +115,7 @@ const Navbar = ({module}) => {
                 </Link>
                 }
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={() => handleLogout()}>
                 <Link className="mobileFormattedLink" to="/">
                 <FiLogOut className="mobileRouteIcon"/>
                  Sign Out

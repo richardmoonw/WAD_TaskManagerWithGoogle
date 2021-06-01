@@ -38,8 +38,11 @@ const Tasks = () => {
   }, []);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/projects/${id}/tasks`)
-    .then(response => setTickets(response.data))
+    axios.get(`http://localhost:3001/projects/${id}/tickets`)
+    .then(response => {
+      console.log(response.data)
+      setTickets(response.data)
+    })
     .catch(response => console.log(response))
   }, [flag]);
 
