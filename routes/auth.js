@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const { OAuth2Client } = require('google-auth-library')
+const User = require('../models/user');
+const { OAuth2Client } = require('google-auth-library');
 const client = new OAuth2Client("868449691994-qs07uckaki4h1r630hphiliaua6ucuq0.apps.googleusercontent.com")
 
 router.post("/auth/google", async (req, res) => {
@@ -12,18 +13,30 @@ router.post("/auth/google", async (req, res) => {
 
   const { sub, name, email } = ticket.getPayload();    
 
-  console.log(name)
-  console.log(email)
-  console.log(sub)
+  var user = await User.findOne(
+    { id: sub }, { name, email }
+  )
 
+  if(!user) {
+    user = await new User({
+      id: sub,
+      email: email,
+      name: name
+    }).save()
+  }
 
-  // const user = await db.user.upsert({ 
-  //     where: { email: email },
-  //     update: { name, picture },
-  //     create: { name, email, picture }
-  // })
+  req.session.userId = user.id
+
   res.status(201)
-  // res.json(user)
+  res.json(user)
+})
+
+router.delete("/auth/google/logout", async(req, res) => {
+  await req.session.destroy()
+  res.status(200)
+  res.json({
+    message: "Logged out successfully"
+  })
 })
 
 module.exports = router
