@@ -1,0 +1,27 @@
+name: Performance Audit over the Loopy Web App Front End
+on: 
+  pull_request: 
+  push:
+    branches: main
+  
+jobs:
+  lighthouse: 
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14.16.0
+        uses: actions/setup-node@v1
+        with: 
+          node-version: 14.x
+        
+      - name: Install and build
+        run: |
+          cd loopy-front
+          npm install
+          npm run build
+      
+      - name: Audit with Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v7
+        with:
+          runs: 5
+          uploadArtifacts: true
+          configPath: './.github/workflows/setup/lighthouse-audit.json'

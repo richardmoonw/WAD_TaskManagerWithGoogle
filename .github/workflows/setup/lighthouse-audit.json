@@ -1,0 +1,14 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "."
+    },
+    "assert": {
+      "assertions": {
+        "errors-in-console": ["error", { "maxScore": 0 }],
+        "content-width": [ "error", { "minScore": 1 } ],
+        "server-response-time": ["error", { "maxNumericValue": 5 } ]
+      }
+    }
+  }
+}
