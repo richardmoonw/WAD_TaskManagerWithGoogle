@@ -1,192 +1,190 @@
-/* TasksComponent. DESKTOP CLASSES */
+/* CSS classes used for the desktop views of the Tasks component */
 .desktopContainer {
-    margin: 0rem;
-    font-family: 'Helvetica';
-    align-items: center;
+  margin: 0rem;
+  font-family: 'Helvetica';
+  align-items: center;
 }
 
 .navbar {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .columnsContainer {
-    min-height: 100vh;
-    background-color: #f5f5f5;
+  min-height: 100vh;
+  background-color: #f5f5f5;
 }
 
 .title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .addButton {
-    margin-top: 1.5rem !important;
+  margin-top: 1.5rem !important;
 }
 
-/* ColumnComponent. DESKTOP CLASSES */
+/* CSS classes used for the desktop views of the Column component */
 .columnContainer {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .columnHeader {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .columnTitle {
-    font-family: "Helvetica";
-    font-weight: bold;
-    padding-left: 0.5rem;
+  font-family: "Helvetica";
+  font-weight: bold;
+  padding-left: 0.5rem;
 }
 
-
-/* CreateTicketComponent and EditTicketComponent. DESKTOP CLASSES */
+/* CSS classes used for the desktop views of the CreateTicket and EditTicket components */
 .formContainer {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
-  
-.titleContainer {
-    text-align: center;
-    padding: 1.5rem 0 1.5rem 0;
-    border-bottom: 0.1rem solid lightgray;
-}
-  
-.titleVariant1 {
-    margin-top: 0rem;
-    color: #fc7272;
-}
-  
-.titleVariant2 {
-    margin-top: 0rem;
-    color: #607afc;
-}
-  
-.centeredContainer {
-    text-align: center;
-}
-  
-.formattedDialogContent {
-    background-color: #f9f9f9;
-}
-  
-.fieldInformation {
-    margin: 1.2rem 0 1rem 0;
-    font-size: 1rem;
-    font-weight: bold;
-}
-  
-.formattedTextField {
-    width: 100%;
-    margin-bottom: 2rem !important;
-}
-  
-.optionButton {
-    margin: 1rem 0 1.5rem 0 !important;
-    width: 90%;
-    height: 1.5rem import !important;
-}
-  
-.formattedDropdown {
-    width: 100%;
-}
-  
-.formattedDatePicker {
-    margin-top: 0;
-    width: 100%;
-}
-  
 
-/* TicketComponent. DESKTOP CLASSES */
+.titleContainer {
+  text-align: center;
+  padding: 1.5rem 0 1.5rem 0;
+  border-bottom: 0.1rem solid lightgray;
+}
+
+.titleVariant1 {
+  margin-top: 0rem;
+  color: #fc7272;
+}
+
+.titleVariant2 {
+  margin-top: 0rem;
+  color: #607afc;
+}
+
+.centeredContainer {
+  text-align: center;
+}
+
+.formattedDialogContent {
+  background-color: #f9f9f9;
+}
+
+.fieldInformation {
+  margin: 1.2rem 0 1rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.formattedTextField {
+  width: 100%;
+  margin-bottom: 2rem !important;
+}
+
+.optionButton {
+  margin: 1rem 0 1.5rem 0 !important;
+  width: 90%;
+  height: 1.5rem import !important;
+}
+
+.formattedDropdown {
+  width: 100%;
+}
+
+.formattedDatePicker {
+  margin-top: 0;
+  width: 100%;
+}
+
+/* CSS classes used for the desktop views of the Ticket component */
 .ticketContainer {
-	font-family: Helvetica;
-    width: 100%;
-    margin-bottom: 1rem;
+  font-family: Helvetica;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .ticketField {
-	color: #878787;
+  color: #878787;
 }
 
 .ticketButton {
-	background-color: transparent;
-	border: none;
-	padding: 0.5rem 1rem 0.5rem 1rem;
-	border-radius: 0.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .ticketButton:hover {
-	background-color: #eee;
+  background-color: #eee;
 }
 
 .ticketTitle {
-    width: 90%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1rem 0 0.5rem 0;
+  width: 90%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .ticketDescription {
-	width: 90%;
-	font-size: 0.9rem;
-	margin: 0.5rem 0 0.5rem 0;
+  width: 90%;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .highPriorityLabel {
-    width: 90%;
-	color: #7d0000;
-	font-size: 0.8rem;
-	background-color: #ff9696;
-	border-radius: 0.2rem;
-	padding: 0.3rem 0;
-	text-align: center;
+  width: 90%;
+  color: #7d0000;
+  font-size: 0.8rem;
+  background-color: #ff9696;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0;
+  text-align: center;
 }
 
 .mediumPriorityLabel {
-    width: 90%;
-	color: #7d5e00;
-	font-size: 0.8rem;
-	background-color: #ffe491;
-	border-radius: 0.2rem;
-	padding: 0.3rem 0;
-	text-align: center;
+  width: 90%;
+  color: #7d5e00;
+  font-size: 0.8rem;
+  background-color: #ffe491;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0;
+  text-align: center;
 }
 
 .lowPriorityLabel {
-    width: 90%;
-	color: #2c6e00;
-	font-size: 0.8rem;
-	background-color: #bdff91;
-	border-radius: 0.2rem;
-	padding: 0.3rem 0;
-	text-align: center;
+  width: 90%;
+  color: #2c6e00;
+  font-size: 0.8rem;
+  background-color: #bdff91;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0;
+  text-align: center;
 }
 
 .ticketDate {
-	font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .ticketDueDate {
-	text-align: right;
+  text-align: right;
 }
 
 /* -------------------------------------------------------------------------------- */
 
-/* TasksComponent. MOBILE CLASSES */
+/* CSS classes used for the mobile views of the Tasks component */
 
 .mobileBackgroundComponent {
-    margin: 0 !important;
-    min-height: 100vh;
-    background-color: #f5f5f5;
+  margin: 0 !important;
+  min-height: 100vh;
+  background-color: #f5f5f5;
 }
 
 .mobileTasksComponent {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .statusPicker {
-    margin-top: 0rem !important;
-    width: 100%;
+  margin-top: 0rem !important;
+  width: 100%;
 }
 
-/* ColumnComponent. MOBILE CLASSES */
+/* CSS classes used for the mobile views of the Column component */
 .mobileTicketsContainer {
-    margin-top: 1rem !important;
+  margin-top: 1rem !important;
 }

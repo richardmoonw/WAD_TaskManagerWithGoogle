@@ -1,42 +1,43 @@
-/* Desktop Components*/
+/* CSS classes used for the desktop views of the components related with the Project module */
 .desktopContainer {
-    margin: 0rem;
-    font-family: 'Helvetica';
-    align-items: center;
+  margin: 0rem;
+  font-family: 'Helvetica';
+  align-items: center;
 }
 
 .gridContainer{
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    padding: 10px;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
 }
 
 .container{
-    width: 80%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto; 
-    padding: 3rem !important;
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; 
+  padding: 3rem !important;
 }
+
 @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 720px; } }
-  @media (min-width: 992px) {
-    .container {
-      max-width: 960px; } }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px; } }
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px; } }
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px; } }
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px; } }
 
 .columnsContainer {
-    min-height: 100vh;
-    background-color: #f5f5f5;
+  min-height: 100vh;
+  background-color: #f5f5f5;
 }
 
 .projectLink {
@@ -48,7 +49,7 @@
 	background-color: transparent;
 	border: none;
 	padding: 0.5rem 1rem 0.5rem 1rem;
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 	border-radius: 0.5rem;
 }
 
@@ -63,15 +64,15 @@
 }
 
 .centeredContainer {
-    text-align: center;
+  text-align: center;
 }
 
 .addButton {
-    margin-top: 1.5rem !important;
+  margin-top: 1.5rem !important;
 }
 
 .title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .formContainer {
@@ -128,7 +129,7 @@
   width: 100%;
 }
 
-/*Mobile Components*/
+/* CSS classes used for the mobile views of the components related with the Project module */
 .mobileBackgroundComponent {
   margin: 0 !important;
   min-height: 100vh;

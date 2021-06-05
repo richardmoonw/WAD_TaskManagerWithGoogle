@@ -1,4 +1,4 @@
-/* DESKTOP CLASSES */
+/* CSS classes used for the desktop views of the Login component */
 .desktopContainerLogin {
   margin: 2rem;
   font-family: 'Helvetica';
@@ -63,7 +63,7 @@
   box-shadow: 0rem 0.25rem 0.5rem rgba(238, 108, 77, 0.5);
 }
 
-/* MOBILE CLASSES */
+/* CSS classes used for the mobile views of the Login component */
 .mobileContainer {
   margin: 2rem;
   text-align: center;
