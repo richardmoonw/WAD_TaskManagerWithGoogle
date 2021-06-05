@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const {ObjectId} = mongoose.Schema
 
+// Database schema for the Ticket model
 const ticketSchema =  new mongoose.Schema({
   id: {
     type: Number,

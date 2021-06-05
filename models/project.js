@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const {ObjectId} = mongoose.Schema
 
+// Database schema for the Project model
 const projectSchema =  new mongoose.Schema({
   id: {
     type: Number,

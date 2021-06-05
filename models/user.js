@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+// Database schema for the User model
 const userSchema = new mongoose.Schema({
   id: {
     type: String,
