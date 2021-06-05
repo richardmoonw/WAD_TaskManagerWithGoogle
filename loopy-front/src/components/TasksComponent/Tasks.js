@@ -11,14 +11,19 @@ import axios from 'axios';
 
 const Tasks = () => {
 
+  // Get the id param of the URL. That property represents the id of the project which the
+  // tickets belong to
   const { id } = useParams();
 
+  // Variable declarations to handle the state within the component
   const[status, setStatus] = useState("backlog")
   const[tickets, setTickets] = useState([])
   const[open, setOpen] = useState(false);
   const[flag, setFlag] = useState(false);
   const[project, setProject] = useState("");
 
+  // Functions used to determine whether the app is run on a device with a large or
+  // small screen
   const isDesktopOrLaptop = useMediaQuery({
     minDeviceWidth: 1366
   });
@@ -27,16 +32,21 @@ const Tasks = () => {
     maxDeviceWidth: 1365
   });
 
+  // Function used to change the status of a given ticket. This allows to change the
+  // ticket to the new status category without needing to wait the response from the 
+  // backend
   const handleStatus = (event) => {
     setStatus(event.target.value);
   };
 
+  // Function used to handle a specific project retrieving request
   useEffect(() => {
     axios.get(`http://localhost:3001/projects/${id}`)
     .then(response => setProject(response.data))
     .catch(response => console.log(response))
   }, []);
 
+  // Function used to handle the tickets retrieving request for a specific project
   useEffect(() => {
     axios.get(`http://localhost:3001/projects/${id}/tickets`)
     .then(response => setTickets(response.data))
@@ -45,6 +55,8 @@ const Tasks = () => {
 
   return (
     <>
+      
+      {/* The app is being run on a device with a large screen */}
       { isDesktopOrLaptop &&
         <div className="desktopContainer">
           <Navbar module="tasks" userId={project.userId} />
@@ -62,7 +74,7 @@ const Tasks = () => {
                 </Grid>
               </Grid>
 
-              {/* Columns */}
+              {/* Columns section */}
               <Grid container spacing={3}>
 
                 {/* Backlog column */}
@@ -110,7 +122,7 @@ const Tasks = () => {
         </div>
       }
 
-      {/* Mobile design */}
+      {/* The app is being run on a device with a small screen */}
       { isTabletOrSmartphone && 
         <>
           <Navbar module="tasks" id={id} />
@@ -145,7 +157,9 @@ const Tasks = () => {
               </Grid>
 
               <Grid container>
-                { status==="backlog" &&
+                { 
+                  // The current selected status is backlog
+                  status==="backlog" &&
                   <Column
                     col_title='Backlog'
                     color="#969696"
@@ -155,7 +169,9 @@ const Tasks = () => {
                     setFlag={setFlag}
                   />
                 }
-                { status==="dev" &&
+                { 
+                  // The current selected status is dev
+                  status==="dev" &&
                   <Column
                     col_title='Selected for development'
                     color="#8c8eff"
@@ -165,7 +181,9 @@ const Tasks = () => {
                     setFlag={setFlag}
                   ></Column>
                 }
-                { status==="doing" &&
+                { 
+                  // The current selected status is doing
+                  status==="doing" &&
                   <Column
                     col_title='In progress'
                     color="#ff8c90"
@@ -175,7 +193,9 @@ const Tasks = () => {
                     setFlag={setFlag}
                   ></Column>
                 }
-                { status==="done" &&
+                { 
+                  // The current selected status is done
+                  status==="done" &&
                   <Column
                     col_title='Done'
                     color="#63db81"
@@ -190,6 +210,10 @@ const Tasks = () => {
           </div>   
         </>
       }
+
+      {/* Create ticket component reference. It is hidden by default, but if a user
+      wants to add a ticket and clicks the respective button, the change of the state 
+      can make it visible */}
       <CreateTicket
         open={open}
         setOpen={setOpen}

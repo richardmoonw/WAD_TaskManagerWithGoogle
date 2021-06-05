@@ -9,21 +9,20 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import DropMenu from './DropMenu';
 import axios from 'axios';
 
+// Definition of the different elements for the priority and status fields of a ticket
 const priorityItems = ['High', 'Medium', 'Low']
 const statusItems = ['Backlog', 'Selected for development', 'In progress', 'Done']
 
 const EditTicket = ({ open, setOpen, ticket, flag, setFlag }) => {
 
+  // Variable declarations to handle the state within the component
   const [title, setTitle] = useState(ticket.name);
   const [description, setDescription] = useState(ticket.description);
   const [priority, setPriority] = useState(priorityItems.find(x => x === ticket.priority));
   const [status, setStatus] = useState(statusItems.find(x => x === ticket.status));
   const [date, setDate] = useState(ticket.end_at);
 
-  const close = () => {
-    setOpen(false);
-  }
-
+  // Function used to handle a given ticket update request
   const handleUpdate = () => {
     axios.put(`http://localhost:3001/projects/${ticket.project_id}/tickets/${ticket._id}`, {
       ticket: {
@@ -40,8 +39,15 @@ const EditTicket = ({ open, setOpen, ticket, flag, setFlag }) => {
     })
   }
 
+  // Function used to close the modal containing the elements for the
+  // ticket update
+  const close = () => {
+    setOpen(false);
+  }
+
   return (
     <Dialog open={open} onClose={close} maxWidth='sm'>
+
       {/* Header section */}
       <DialogTitle className="titleContainer">
         <Grid container>
@@ -91,10 +97,10 @@ const EditTicket = ({ open, setOpen, ticket, flag, setFlag }) => {
             />
           </Grid>
           <Grid item xs={12} md={4}>
-          <DropMenu className="formattedDropdown" title="Priority" items={priorityItems} value={priority} setValue={setPriority}/>
+            <DropMenu className="formattedDropdown" title="Priority" items={priorityItems} value={priority} setValue={setPriority}/>
           </Grid>
           <Grid item xs={12} md={4}>
-          <DropMenu className="formattedDropdown" title="Status" items={statusItems}  value={status} setValue={setStatus}/>
+            <DropMenu className="formattedDropdown" title="Status" items={statusItems}  value={status} setValue={setStatus}/>
           </Grid>
           <Grid item xs={11} md={4}>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>

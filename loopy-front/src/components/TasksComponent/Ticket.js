@@ -5,8 +5,11 @@ import EditTicket from './EditTicket';
 import axios from 'axios';
 
 const Ticket = (props) => {
+
+  // Variable declaration to handle the state within the component
   const [open, setOpen] = useState(false)
   
+  // Function used to handle an existing ticket removal request
   const HandleDeletion = () => {
     axios.delete(`http://localhost:3001/projects/${props.ticket.project_id}/tickets/${props.ticket._id}`)
     .then(response => {
@@ -19,8 +22,6 @@ const Ticket = (props) => {
     <>
       <Card className="ticketContainer">
         <CardContent>
-
-          {/* Header */}
           <Grid container alignItems='center'>
             <Grid item xs={5} md={5}>
               <span className="ticketField">ID - {props.ticket._id.slice(-4)}</span>
@@ -33,14 +34,8 @@ const Ticket = (props) => {
                 <button onClick={() => HandleDeletion()} className="ticketButton">DELETE</button>
               </Grid>
             </Grid>
-
-            {/* Ticket title */}
             <p className="ticketTitle">{props.ticket.name}</p>
-            
-
-            {/* Priority, description and date */}
             <p className="ticketDescription">{props.ticket.description}</p>
-
             <Grid container>
               <Grid item xs={3} md={3}>
                 { props.ticket.priority === "High" &&
@@ -58,11 +53,12 @@ const Ticket = (props) => {
               </Grid>
             </Grid>
           </Grid>
-
-
         </CardContent>
       </Card>
 
+      {/* Edit ticket component reference. It is hidden by default, but if a user
+      wants to edit a ticket and clicks the respective button, the change of the state 
+      can make it visible */}
       <EditTicket
         open={open}
         setOpen={setOpen}

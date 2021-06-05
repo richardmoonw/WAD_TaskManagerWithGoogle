@@ -9,21 +9,20 @@ import { IoCreateOutline } from "react-icons/io5";
 import DropMenu from './DropMenu';
 import axios from 'axios';
 
+// Definition of the different elements for the priority and status fields of a ticket
 const priorityItems = ['High', 'Medium', 'Low']
 const statusItems = ['Backlog', 'Selected for development', 'In progress', 'Done']
 
 const CreateTicket = ({ open, setOpen, flag, setFlag, project_id }) => {
 
+  // Variable declarations to handle the state within the component
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('High');
   const [status, setStatus] = useState('Backlog');
   const [date, setDate] = useState(new Date());
 
-  const close = () => {
-    setOpen(false);
-  }
-
+  // Function used to handle a new ticket addition request
   const handleCreate = () => {
     axios.post(`http://localhost:3001/projects/${project_id}/tickets`, {
       ticket: {
@@ -40,9 +39,16 @@ const CreateTicket = ({ open, setOpen, flag, setFlag, project_id }) => {
       setOpen(!open)
     })
   }
+  
+  // Function used to close the modal containing the elements for the
+  // ticket addition
+  const close = () => {
+    setOpen(false);
+  }
 
   return (
     <Dialog open={open} onClose={close} maxWidth='sm'>
+
       {/* Header section */}
       <DialogTitle className="titleContainer">
         <Grid container>
