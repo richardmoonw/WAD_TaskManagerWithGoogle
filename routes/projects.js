@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Project = require('../models/project');
+const Ticket = require('../models/ticket');
 
 // API endpoints generated for the Projects controller. The functions within this controller
 // allows you to perform CRUD operations over the Project model
@@ -57,10 +58,11 @@ router.put("/:id", async (req, res) => {
 // Delete an existing project and all its associated tickets from the database.
 router.delete("/:id", async(req, res) => {
   try {
-    const deletedProject = await Project.findOneAndDeleteAll({
+    await Ticket.deleteMany({projectId: req.params.id})
+    await Project.findOneAndDelete({
       _id: req.params.id,
     });
-    res.json(deletedProject);
+    res.sendStatus(204)
   } 
   catch (error) {
     res.status(400).send(error);

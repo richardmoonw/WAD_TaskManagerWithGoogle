@@ -89,7 +89,7 @@ const ProjectCard = (props) => {
             </CardContent>
             <button className="ticketButton" onClick={() => setOpen(true)}>EDIT</button>
             <button className="ticketButton" onClick={() => handleDelete()}>DELETE</button>
-        </Card>
+          </Card>
         </Grid>
       }
 

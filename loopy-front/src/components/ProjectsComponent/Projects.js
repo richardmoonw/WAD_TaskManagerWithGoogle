@@ -71,7 +71,7 @@ const Projects = ({userId}) => {
                           description={project.description} 
                           date={project.start_at.slice(0,10)} 
                           image={Logo} 
-                          flag={flag} 
+                          flag={flag}
                           setFlag={setFlag}
                         />
                       );
@@ -107,12 +107,12 @@ const Projects = ({userId}) => {
                         return (
                           <ProjectCard 
                             key={project.id} 
-                            id={project.id} 
+                            id={project._id} 
                             title={project.name} 
                             description={project.description} 
                             date={project.start_at.slice(0,10)} 
                             image={Logo} 
-                            flag={flag} 
+                            flag={flag}
                             setFlag={setFlag}
                           />
                         )
