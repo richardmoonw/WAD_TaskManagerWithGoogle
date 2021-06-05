@@ -10,14 +10,12 @@ import axios from 'axios';
 
 const AddProject = ({ open, setOpen, flag, setFlag, userId }) => {
 
+  // Variable declarations to handle the state within the component
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState(new Date());
 
-  const close = () => {
-    setOpen(false);
-  }
-
+  // Function used to handle a new project addition request
   const handleAddition = () => {
     axios.post('http://localhost:3001/projects', {
       project: {
@@ -33,8 +31,15 @@ const AddProject = ({ open, setOpen, flag, setFlag, userId }) => {
     })
   }
 
+  // Function used to close the modal containing the elements for the
+  // project addition.
+  const close = () => {
+    setOpen(false);
+  }
+
   return (
     <Dialog open={open} onClose={close} maxWidth='sm'>
+
       {/* Header section */}
       <DialogTitle className="titleContainer">
         <Grid container>

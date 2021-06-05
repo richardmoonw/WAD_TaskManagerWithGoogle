@@ -10,14 +10,12 @@ import axios from 'axios';
 
 const EditProject = ({ open, setOpen, flag, setFlag, project }) => {
 
+  // Variable declarations to handle the state within the component
   const [title, setTitle] = useState(project.title);
   const [description, setDescription] = useState(project.description);
   const [date, setDate] = useState(project.date);
 
-  const close = () => {
-    setOpen(false);
-  }
-
+  // Function used to handle an existing project update request  
   const handleUpdate = () => {
     axios.put(`http://localhost:3001/projects/${project.id}`, {
       project: {
@@ -32,8 +30,15 @@ const EditProject = ({ open, setOpen, flag, setFlag, project }) => {
     })
   }
 
+  // Function used to close the modal containing the elements for the
+  // project update.
+  const close = () => {
+    setOpen(false);
+  }
+
   return (
     <Dialog open={open} onClose={close} maxWidth='sm'>
+      
       {/* Header section */}
       <DialogTitle className="titleContainer">
         <Grid container>
