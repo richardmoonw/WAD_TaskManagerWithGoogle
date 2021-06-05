@@ -2,19 +2,22 @@ var express = require('express');
 var router = express.Router({mergeParams: true});
 const Ticket = require('../models/ticket');
 
+// API endpoints generated for the Tickets controller. The functions within this controller
+// allows you to perform CRUD operations over the Ticket model
+
+// Get all the tickets' data for a given project.
 router.get("/", async (req, res) => {
   tickets = await Ticket.find({projectId: req.params.project_id }).exec();
-
   res.json(tickets)
 })
 
+// Store a new ticket in the database. The ticket must be linked to a specific project.
 router.post("/", async (req, res) => {
   try {
     const { ticket } = req.body;
     const newTicket = await new Ticket({name: ticket.name, description: ticket.description,
                                       status: ticket.status, priority: ticket.priority,
                                       end_at: ticket.end_at, projectId: ticket.project_id}).save()
-    
     res.json(newTicket);
   }
   catch(error) {
@@ -23,6 +26,7 @@ router.post("/", async (req, res) => {
   }
 }) 
 
+// Update an existing ticket in the database. 
 router.put("/:id", async (req, res) => {
   try {
     const { ticket } = req.body;
@@ -47,6 +51,7 @@ router.put("/:id", async (req, res) => {
   }
 })
 
+// Delete an existing ticket from the database.
 router.delete("/:id", async(req, res) => {
   try {
     const deletedTicket = await Ticket.findOneAndDelete({
