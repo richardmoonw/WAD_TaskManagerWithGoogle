@@ -9,13 +9,18 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 ReactDOM.render(
+
+  // Front end routes definition
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route exact component={ (props) => {
-          if (props.location.state !== undefined) return <Projects userId={props.location.state.userId} />
-          else return <Redirect to="/" />
-        } } path="/projects">
+        <Route exact 
+          component={ (props) => {
+            if (props.location.state !== undefined) return <Projects userId={props.location.state.userId} />
+            else return <Redirect to="/" />
+          }} 
+          path="/projects"
+        >
         </Route>
         <Route path="/projects/:id/tasks">
           <Tasks/>
